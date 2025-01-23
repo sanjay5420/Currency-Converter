@@ -13,13 +13,13 @@ const CurrencyConverter = () => {
 
   const fetchCurrencies = async () => {
     const res = await fetch(
-      "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json");
+      `${import.meta.env.VITE_API_URL}/currencies.json`);
     const data = await res.json();
     setCurrencies(Object.keys(data));
   };
 
   const currencyConversion = async () => {
-    const res = await fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${toCurrency}.json`);
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/currencies/${toCurrency}.json`);
     const data = await res.json();
     setConvertedAmount(amount / data[toCurrency][fromCurrency])
   };
