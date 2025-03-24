@@ -1,6 +1,6 @@
 import React from "react";
 
-const CurrencySelect = ({ currencies,toCurrency,fromCurrency,currency,setCurrency,title }) => {
+const CurrencySelect = ({ currencies,currency,setCurrency,title }) => {
   return (
     <div className="flex flex-col gap-3">
         <div className="font-semibold text-white"><label htmlFor={title}>{title}</label></div>
